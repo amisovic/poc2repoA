@@ -1,13 +1,19 @@
 name: Build
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Simulate build
+      run: |
+        echo "Building poc2repoA..."
+        sleep 10
+        echo "Build complete."
       uses: actions/checkout@v4
     - name: Simulate build
       run: |
