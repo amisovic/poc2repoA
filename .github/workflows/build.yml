@@ -2,6 +2,7 @@ name: Build
 
 on:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -11,13 +12,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Simulate build
       run: |
-        echo "Building poc2repoA..."
-        sleep 10
-        echo "Build complete."
-      uses: actions/checkout@v4
-    - name: Simulate build
-      run: |
         ls -l
+        echo "Building poc2repoA..."
         cat repoA.txt || true
-        echo "This build process for application A"
-        sleep 1
+        sleep 5
+        echo "Build complete."
