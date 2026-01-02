@@ -14,7 +14,9 @@ jobs:
       uses: actions/cache@v4
       with:
         path: cache.txt
-        key: cache-txt
+        key: cache-txt-${{ github.run_id }}
+        restore-keys: |
+          cache-txt-
     - name: Simulate build
       run: |
         ls -l
