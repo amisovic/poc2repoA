@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Simulate build
+      run: |
+        ls -l
+        cat repoA.txt || true
+        echo "This build process for application A"
+        sleep 1
